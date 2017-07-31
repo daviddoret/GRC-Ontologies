@@ -1,0 +1,14 @@
+-- Config properties for OWLGrEd
+{
+	-- elementu kolekcijas limits
+	copy_limit = 1200,
+
+	-- vai konfigurators ir paslepts
+	is_configurator_hidden = false,
+
+	-- anotâciju valodas
+	annotation_languages = {"en", "lv", "de", "es", "fr", "pt"},
+
+	--vai vajag dzçðanas apstiprinâjuma logu
+	is_delete_confirm_msg_needed = false,
+}

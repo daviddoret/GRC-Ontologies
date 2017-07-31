@@ -1,0 +1,1109 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#"
+     xml:base="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2">
+        <owl:versionIRI rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2/2.0.10"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The reason for the &quot;v2&quot; is to distinguish it from earlier versions of the OpenFAIR standard in the absence of a known and proper versioning scheme. This will allow to keep the ontology for the 2017 version of OpenFAIR intact and design a new v3 ontology when OpenFAIR will be officially updated. Ontology comparisons and diffs will then be possible as well.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TODO -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TODO"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#factor_is_decomposed_in_factor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#factor_is_decomposed_in_factor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#is_factorized_by"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+        <rdfs:label xml:lang="en">is directly factorized by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#is_used_by_factor"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FactorValueType"/>
+        <rdfs:label xml:lang="en">has value type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasTimeUnit -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasTimeUnit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+        <rdfs:label xml:lang="en">has time unit</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#is_factor_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+        <rdfs:label xml:lang="en">is direct factor of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#is_factor_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#is_factor_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+        <rdfs:label xml:lang="en">is factor of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#is_factorized_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#is_factorized_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+        <rdfs:label>is factorized by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#is_used_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#is_used_by">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#uses"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Analyzis"/>
+        <rdfs:label xml:lang="en">factor is used by analyzis</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#is_used_by_factor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#is_used_by_factor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FactorValueType"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+        <rdfs:label xml:lang="en">type is used by factor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#uses -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#uses">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Analyzis"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+        <rdfs:label xml:lang="en">analyzis uses factor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFrequency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFrequency">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasPeak -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasPeak">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#3PointsEstimate"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has peak</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasProbability -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasProbability">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasRangeMaximum -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasRangeMaximum">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#3PointsEstimate"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasRangeMinimum -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasRangeMinimum">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#3PointsEstimate"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</xsd:minInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasRangeSizeInPercent -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasRangeSizeInPercent">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#3PointsEstimate"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+                <owl:withRestrictions rdf:parseType="Collection">
+                    <rdf:Description>
+                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0</xsd:minInclusive>
+                    </rdf:Description>
+                    <rdf:Description>
+                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</xsd:maxInclusive>
+                    </rdf:Description>
+                </owl:withRestrictions>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The size of the population range that is being estimated. Usually 90%, meaning that on both sides of the distribution, we have 5% outliers.</rdfs:comment>
+        <rdfs:label xml:lang="en">has range size (%)</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isRoot -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isRoot">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">is root</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#AgentCapabilityFactorValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#AgentCapabilityFactorValue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FactorValueType"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Agent Capability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Analyzis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Analyzis"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Century -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Century">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+        <rdfs:comment xml:lang="en">100 years</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ContactFrequency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ContactFrequency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventOccurrenceFactorValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ThreatEventFrequencyFactor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isRoot"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Contact Frequency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Day -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Day">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Decade -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Decade">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+        <rdfs:comment xml:lang="en">10 years</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Difficulty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Difficulty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#AgentCapabilityFactorValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Vulnerability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isRoot"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Difficulty</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventImpactFactorValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventImpactFactorValue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FactorValueType"/>
+        <rdfs:label xml:lang="en">Impact per Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventOccurrenceFactorValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventOccurrenceFactorValue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FactorValueType"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FrequencyFactorValue"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ProbabilityFactorValue"/>
+        </owl:disjointUnionOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Event Occurrence per Time Unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FactorValueType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <rdfs:comment xml:lang="en">Since FAIR factors are organized in a hierarchy, the factor --&gt; factor relationship could be implemented as a functional one-to-many relationship. But this supplementary constraint does not seem to add value to the model by limitting the possibility to reuse factors between risk assessments or within risk assessments. In conclusion, I chose to not contraint the model when there is no demonstrated necessity to do so.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FactorEstimation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FactorEstimation">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Factor Estimation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FactorValueType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FactorValueType">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#AgentCapabilityFactorValue"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventImpactFactorValue"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventOccurrenceFactorValue"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Period_Impact"/>
+        </owl:disjointUnionOf>
+        <rdfs:label xml:lang="en">Factor Value Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FrequencyFactorValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FrequencyFactorValue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventOccurrenceFactorValue"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasTimeUnit"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFrequency"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ProbabilityFactorValue"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Frequency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Hour -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Hour">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossEventFrequencyFactor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossEventFrequencyFactor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventOccurrenceFactorValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossExposureFactor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isRoot"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loss Event Frequency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossExposureFactor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossExposureFactor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Period_Impact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isRoot"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loss Exposure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossMagnitudeFactor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossMagnitudeFactor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventImpactFactorValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossExposureFactor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isRoot"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loss Magnitude</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Lustrum -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Lustrum">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+        <rdfs:comment xml:lang="en">5 years</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Millenium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Millenium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+        <rdfs:comment xml:lang="en">1000 years</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Minute -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Minute">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Month -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Month">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Olympiad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Olympiad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+        <rdfs:comment xml:lang="en">4 years</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#PercentileFactorValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#PercentileFactorValue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#AgentCapabilityFactorValue"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Percentile</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Period_Impact -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Period_Impact">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FactorValueType"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasTimeUnit"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Impact per Time Unit</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#PrimaryLoss -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#PrimaryLoss">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventImpactFactorValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossMagnitudeFactor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isRoot"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Primary Loss</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ProbabilityFactorValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ProbabilityFactorValue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventOccurrenceFactorValue"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasTimeUnit"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasProbability"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Probability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ProbabilityOfAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ProbabilityOfAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventOccurrenceFactorValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ThreatEventFrequencyFactor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isRoot"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Probability of Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Risk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Risk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Synonyms"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Risk</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
+        <TODO>TROUBLESHOOT THIS: When I make this class Disjoint Unit of its children, I get reasoning errors and secondary risk factors become equivalent to &apos;thing&apos;.</TODO>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Risk Factor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Risk_Analyzis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Risk_Analyzis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Analyzis"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#uses"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossEventFrequencyFactor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#uses"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossExposureFactor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#uses"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossMagnitudeFactor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#uses"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ThreatEventFrequencyFactor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#uses"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Vulnerability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <TODO xml:lang="en">add a ROOT factor</TODO>
+        <rdfs:label xml:lang="en">Risk Analyzis</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Second -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Second">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#SecondaryLossEventFrequency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#SecondaryLossEventFrequency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventOccurrenceFactorValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#SecondaryRisk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isRoot"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Secondary Loss Event Frequency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#SecondaryLossMagnitude -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#SecondaryLossMagnitude">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventImpactFactorValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#SecondaryRisk"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isRoot"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Secondary Loss Magnitude</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#SecondaryRisk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#SecondaryRisk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Period_Impact"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossMagnitudeFactor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isRoot"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Secondary Risk</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Synonyms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Synonyms">
+        <rdfs:comment>A container for synonymous concepts, but synonymous are properly implemented as equivalent classes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ThreatCapability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ThreatCapability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#AgentCapabilityFactorValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Vulnerability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isRoot"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Threat Capability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ThreatEventFrequencyFactor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ThreatEventFrequencyFactor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#EventOccurrenceFactorValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossEventFrequencyFactor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isRoot"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Threat Event Frequency</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Century"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Day"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Decade"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Hour"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Lustrum"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Millenium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Minute"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Month"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Olympiad"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Second"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Week"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Yearly"/>
+        </owl:disjointUnionOf>
+        <rdfs:label xml:lang="en">Time Frame</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Vulnerability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Vulnerability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasFactorValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#PercentileFactorValue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossEventFrequencyFactor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isRoot"/>
+                <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Week -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Week">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Yearly -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Yearly">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#TimeFrame"/>
+        <rdfs:comment xml:lang="en">1 year</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#3PointsEstimate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#3PointsEstimate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FactorEstimation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasPeak"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasRangeMaximum"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasRangeMinimum"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasRangeSizeInPercent"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3 Points Estimation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Century"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Day"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Decade"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Hour"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Lustrum"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Millenium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Minute"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Month"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Olympiad"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Second"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Week"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Yearly"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

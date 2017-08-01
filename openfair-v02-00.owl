@@ -40,6 +40,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#dd:isSample -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#dd:isSample"/>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#dd:question -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#dd:question"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -63,6 +75,22 @@
         <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
         <rdfs:label xml:lang="en">is directly factorized by</rdfs:label>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasAssetLevelControl -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasAssetLevelControl">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasControl"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Asset"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#AssetLevelControl"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasControl -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#hasControl"/>
     
 
 
@@ -97,6 +125,39 @@
     
 
 
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isChainedWithInnerAsset -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isChainedWithInnerAsset">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isChainedWithOuterAsset"/>
+        <dd:question>To represent &quot;asset chains&quot;, I hesitated between two possible modelling approaches:
+a) create an object property &quot;has outer asset&quot; with inverse &quot;has inner asset&quot;
+b) create a special class &quot;asset chain link&quot;
+I chose a), to keep things simple at this point of the ontology development. That said, option b) would be interesting to open the door to a fine-grained documentation of the linkage between an inner and an outer asset, where certain controls of the outer asset will have distinct effects on the inner asset, e.g. &quot;loss event &gt; detection&quot; on the outer asset would have an effect as &quot;prevention &gt; vulnerability &gt; threat event detection&quot;.</dd:question>
+        <rdfs:isDefinedBy>&quot;DEFENSE IN-DEPTH
+One of the interesting uses of this ontology is that we can model the effect of defense in-depth (Figure 11.11). To do this, you have to keep in mind that this is an asset-level ontology and that it would apply to each asset in a &quot;chain&quot; of assets. For example, let&apos;s say we have two levels of defense: a safe that resides within a locked room. The full ontology applies to each of these assets (yes, the locked room is considered an asst because, in addition to its own value, it inherits the value/liability proposition of the assets it contains).&quot;
+Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Information Risk - A FAIR Approach, p. 251.</rdfs:isDefinedBy>
+        <rdfs:label>is chained with inner asset</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isChainedWithOuterAsset -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isChainedWithOuterAsset">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <dd:question>To represent &quot;asset chains&quot;, I hesitated between two possible modelling approaches:
+a) create an object property &quot;has outer asset&quot; with inverse &quot;has inner asset&quot;
+b) create a special class &quot;asset chain link&quot;
+I chose a), to keep things simple at this point of the ontology development. That said, option b) would be interesting to open the door to a fine-grained documentation of the linkage between an inner and an outer asset, where certain controls of the outer asset will have distinct effects on the inner asset, e.g. &quot;loss event &gt; detection&quot; on the outer asset would have an effect as &quot;prevention &gt; vulnerability &gt; threat event detection&quot;.</dd:question>
+        <rdfs:isDefinedBy>&quot;DEFENSE IN-DEPTH
+One of the interesting uses of this ontology is that we can model the effect of defense in-depth (Figure 11.11). To do this, you have to keep in mind that this is an asset-level ontology and that it would apply to each asset in a &quot;chain&quot; of assets. For example, let&apos;s say we have two levels of defense: a safe that resides within a locked room. The full ontology applies to each of these assets (yes, the locked room is considered an asst because, in addition to its own value, it inherits the value/liability proposition of the assets it contains).&quot;
+Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Information Risk - A FAIR Approach, p. 251.</rdfs:isDefinedBy>
+        <rdfs:label>is chained with outer asset</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isDependentForEffectivenessOn -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isDependentForEffectivenessOn">
@@ -123,6 +184,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#is_factor_of">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#is_factorized_by"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
@@ -374,7 +436,54 @@
 
     <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Asset -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Asset"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Asset">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isChainedWithInnerAsset"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Asset"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isChainedWithOuterAsset"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Asset"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Asset"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isChainedWithInnerAsset"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Asset"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <dd:question>To represent &quot;asset chains&quot;, I hesitated between two possible modelling approaches:
+a) create an object property &quot;has outer asset&quot; with inverse &quot;has inner asset&quot;
+b) create a special class &quot;asset chain link&quot;
+I chose a), to keep things simple at this point of the ontology development. That said, option b) would be interesting to open the door to a fine-grained documentation of the linkage between an inner and an outer asset, where certain controls of the outer asset will have distinct effects on the inner asset, e.g. &quot;loss event &gt; detection&quot; on the outer asset would have an effect as &quot;prevention &gt; vulnerability &gt; threat event detection&quot;.</dd:question>
+        <rdfs:isDefinedBy>&quot;DEFENSE IN-DEPTH
+One of the interesting uses of this ontology is that we can model the effect of defense in-depth (Figure 11.11). To do this, you have to keep in mind that this is an asset-level ontology and that it would apply to each asset in a &quot;chain&quot; of assets. For example, let&apos;s say we have two levels of defense: a safe that resides within a locked room. The full ontology applies to each of these assets (yes, the locked room is considered an asst because, in addition to its own value, it inherits the value/liability proposition of the assets it contains).&quot;
+Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Information Risk - A FAIR Approach, p. 251.</rdfs:isDefinedBy>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Asset"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isChainedWithOuterAsset"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Asset"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <dd:question>To represent &quot;asset chains&quot;, I hesitated between two possible modelling approaches:
+a) create an object property &quot;has outer asset&quot; with inverse &quot;has inner asset&quot;
+b) create a special class &quot;asset chain link&quot;
+I chose a), to keep things simple at this point of the ontology development. That said, option b) would be interesting to open the door to a fine-grained documentation of the linkage between an inner and an outer asset, where certain controls of the outer asset will have distinct effects on the inner asset, e.g. &quot;loss event &gt; detection&quot; on the outer asset would have an effect as &quot;prevention &gt; vulnerability &gt; threat event detection&quot;.</dd:question>
+        <rdfs:comment>&quot;DEFENSE IN-DEPTH
+One of the interesting uses of this ontology is that we can model the effect of defense in-depth (Figure 11.11). To do this, you have to keep in mind that this is an asset-level ontology and that it would apply to each asset in a &quot;chain&quot; of assets. For example, let&apos;s say we have two levels of defense: a safe that resides within a locked room. The full ontology applies to each of these assets (yes, the locked room is considered an asst because, in addition to its own value, it inherits the value/liability proposition of the assets it contains).&quot;
+Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Information Risk - A FAIR Approach, p. 251.</rdfs:comment>
+    </owl:Axiom>
     
 
 
@@ -400,6 +509,7 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#BusinessPartners">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#SecondaryStakeholder"/>
+        <dd:isSample rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dd:isSample>
         <rdfs:comment>&quot;Examples of secondary stakeholders:
 - Customers
 - Competitors
@@ -426,6 +536,7 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
 
     <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Community">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#SecondaryStakeholder"/>
+        <dd:isSample rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dd:isSample>
         <rdfs:comment>&quot;Examples of secondary stakeholders:
 - Customers
 - Competitors
@@ -442,6 +553,7 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
 
     <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Competitors">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#SecondaryStakeholder"/>
+        <dd:isSample rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dd:isSample>
         <rdfs:comment>&quot;Examples of secondary stakeholders:
 - Customers
 - Competitors
@@ -541,6 +653,7 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
 
     <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Customers">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#SecondaryStakeholder"/>
+        <dd:isSample rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dd:isSample>
         <rdfs:comment>&quot;Examples of secondary stakeholders:
 - Customers
 - Competitors
@@ -765,6 +878,7 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
 
     <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Government">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#SecondaryStakeholder"/>
+        <dd:isSample rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dd:isSample>
         <rdfs:comment>&quot;Examples of secondary stakeholders:
 - Customers
 - Competitors
@@ -824,7 +938,7 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
 
     <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossEventControl">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#AssetLevelControl"/>
-        <rdfs:label>Loss Event</rdfs:label>
+        <rdfs:label>Loss Event Control</rdfs:label>
     </owl:Class>
     
 
@@ -949,6 +1063,7 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
 
     <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Media">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#SecondaryStakeholder"/>
+        <dd:isSample rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</dd:isSample>
         <rdfs:comment>&quot;Examples of secondary stakeholders:
 - Customers
 - Competitors
@@ -1332,7 +1447,12 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
 
     <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Stakeholder -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Stakeholder"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Stakeholder">
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#PrimaryStakeholder"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#SecondaryStakeholder"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
     
 
 

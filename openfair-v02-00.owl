@@ -63,6 +63,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#MayBeCausedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#MayBeCausedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#mayCause"/>
+        <rdfs:label>may be caused by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#factor_is_decomposed_in_factor -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#factor_is_decomposed_in_factor">
@@ -125,6 +135,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#influences -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#influences">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isInfluencedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Control"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Vulnerability"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isChainedWithInnerAsset -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isChainedWithInnerAsset">
@@ -180,6 +201,16 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
     
 
 
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isInfluencedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isInfluencedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Vulnerability"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Control"/>
+        <rdfs:label>is influenced by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#is_factor_of -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#is_factor_of">
@@ -226,6 +257,16 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
         <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#FactorValueType"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Factor"/>
         <rdfs:label xml:lang="en">type is used by factor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#mayCause -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#mayCause">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Threat"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossEvent"/>
+        <rdfs:label>may cause</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -752,7 +793,7 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Vulnerability"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#VulnerabilityFactor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -931,6 +972,12 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Information"/>
         <rdfs:label>Visibility</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossEvent"/>
     
 
 
@@ -1279,7 +1326,9 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
     <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Risk -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Risk">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Synonyms"/>
+        <rdfs:isDefinedBy>&quot;The following definition applies regardless of whether you are talking about investment risk, market risk, credit risk, information risk, or any of the other common risk domains:
+Risk - The probable frequency and probable magnitude of future loss.&quot;
+Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Information Risk - A FAIR Approach, p. 251.</rdfs:isDefinedBy>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Risk</rdfs:label>
     </owl:Class>
     
@@ -1331,7 +1380,7 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#uses"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Vulnerability"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#VulnerabilityFactor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <TODO xml:lang="en">add a ROOT factor</TODO>
@@ -1456,17 +1505,19 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
     
 
 
-    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Synonyms -->
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Threat -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Synonyms">
-        <rdfs:comment>A container for synonymous concepts, but synonymous are properly implemented as equivalent classes.</rdfs:comment>
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Threat">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#mayCause"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossEvent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy>&quot;A reasonable definition for threat is anything (e.g., object, substance, human, etc.) that is capable of acting in a manner that can result in harm. A tornado is a threat, as is someone driving a car, as is a hacker. The key consideration is that threats are the actors (a.k.a., &quot;agents&quot;) that can cause a loss event to occur. This is in contrast to some common usage, where conditions may be referred as threats.&quot;
+Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Information Risk - A FAIR Approach, p. 251.</rdfs:isDefinedBy>
     </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ThreatAgent -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#ThreatAgent"/>
     
 
 
@@ -1485,7 +1536,7 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isFactorOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Vulnerability"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#VulnerabilityFactor"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1697,6 +1748,43 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
     <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Vulnerability -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Vulnerability">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isInfluencedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Control"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy>&quot;Although the word &quot;vulnerability&quot; is commonly referred to as a &quot;weakness that may be exploited by a threat&quot;, that isn&apos;t how we view things in FAIR. Similar to the term risk, vulnerability is considered a value rather than a thing. As a result, you can&apos;t point to something and say, &quot;Here is a vulnerability!&quot; What you ca do is point to a control (like a frayed rope) and declare, &quot;Here is a condition that increases our vulnerability.&quot;
+Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Information Risk - A FAIR Approach, p. 251.</rdfs:isDefinedBy>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Vulnerability"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#isInfluencedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#Control"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <rdfs:comment>Is hesitated a little on how to represent the relationship between Vulnerability and Control. I could have named the property &quot;is reduced by&quot; but the situation may go the other way, i.e. a Control is absent or poorly implemented and increases the Vulnerability.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#VulnerabilityControl -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#VulnerabilityControl">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossEventPreventionControl"/>
+        <rdfs:comment>&quot;(...) controls that determine the likelihood that a threat event will result in a loss event.&quot;
+Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Information Risk - A FAIR Approach, p. 247.</rdfs:comment>
+        <rdfs:label>Vulnerability</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#VulnerabilityFactor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#VulnerabilityFactor">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#RiskFactor"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1718,16 +1806,6 @@ Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Informatio
                 <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
             </owl:Restriction>
         </rdfs:subClassOf>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#VulnerabilityControl -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#VulnerabilityControl">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/daviddoret/ontologies/2017/6/openfair-v2#LossEventPreventionControl"/>
-        <rdfs:comment>&quot;(...) controls that determine the likelihood that a threat event will result in a loss event.&quot;
-Reference: Jack Freund and Jack Jones, (2015). Measuring and Managing Information Risk - A FAIR Approach, p. 247.</rdfs:comment>
         <rdfs:label>Vulnerability</rdfs:label>
     </owl:Class>
     
